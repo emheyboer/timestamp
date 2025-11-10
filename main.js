@@ -1,6 +1,6 @@
 function update() {
     const now = Math.floor(new Date() / 1000);
-    timestamp.innerText = now.toLocaleString();
+    timestamp.innerHTML = now.toLocaleString().replaceAll(/([^0-9])/g, '$1<wbr/>');
     
     countdown.innerText = timeToMilestone(now);
 }
