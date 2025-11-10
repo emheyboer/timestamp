@@ -2,14 +2,13 @@ function update() {
     const now = Math.floor(new Date() / 1000);
     timestamp.innerHTML = now.toLocaleString().replaceAll(/([^0-9])/g, '$1<wbr/>');
     
-    countdown.innerText = timeToMilestone(now);
+    const url = new URL(location);
+    const milestone = Number(url.searchParams.get('milestone')) || Math.ceil(now / 1e8) * 1e8;
+
+    countdown.innerText = timeToMilestone(now, milestone);
 }
 
 function timeToMilestone(now, milestone) {
-    if (!milestone) {
-        milestone = Math.ceil(now / 1e8) * 1e8;
-    }
-
     const periods = [
         [365*24*60*60, 'year'],
         [24*60*60, 'day'],
