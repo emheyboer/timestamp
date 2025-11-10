@@ -1,0 +1,1 @@
+A webpage made for counting down to timestamp milestones. Initially made to celebrate 1.7B seconds, `timestamp` sets a new milestone every 100M seconds by default. To set a custom value, add `?milestone=` to the url.
