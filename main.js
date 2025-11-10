@@ -35,7 +35,7 @@ function timeToMilestone(now, milestone) {
         }
     }
 
-    deltaString += ' until ' + Math.floor(milestone).toLocaleString();
+    deltaString += ' until ' + milestone.toLocaleString();
     return deltaString;
 }
 
